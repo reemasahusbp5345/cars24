@@ -1,0 +1,45 @@
+ <html>
+     <head> 
+     <style type="text/css"></style>
+     </head>
+     <body>
+        <input id="name" type="text"/>
+        <input type="email" id="email"/>
+        <input type="text" id="phone"/>
+        <button id="submit">submit</button>
+        <p id="output"></p>
+        <script type="text/javascript">
+        var btn=document.getElementById("submit")
+        btn.addEventListener('click',showMessage)
+        function showMessage(){
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var phone=document.getElementById("phone").value;
+            var para=document.getElementById("output")
+            if(name==' '|| email==''|| phone==''){
+                 if(name==''){
+                      var div=document.createElement('div')
+                      div.textContent="invalid name"
+                      para.appendChild(div)
+                 }
+                 if(email==''){
+                      var div=document.createElement('div')
+                      div.textContent="invalid email"
+                      para.appendChild(div)
+                 }
+                 if(phone==''){
+                      var div=document.createElement('div')
+                      div.textContent="invalid phone"
+                      para.appendChild(div)
+                 }
+                  
+            }
+            else{
+               para.textContent="thankyou"+name ;
+               para.style.color="red";
+            }
+        }
+         
+        </script>
+     </body>
+ </html>
